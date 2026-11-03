@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Priorities</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="board">
+      <header class="board-head">
+        <h1>Priorities °❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･</h1>
+        <p>
+          Type your tasks below, one per line, then drag them into order. The
+          most important goes on top.  ˙𐃷˙
+        </p>
+      </header>
+
+      <form class="add" id="add-form" autocomplete="off">
+        <textarea
+          id="add-input"
+          rows="5"
+          placeholder="Send those emails&#10;Get my life together&#10;Make a cute little to-do list ִ˖𓍢ִ໋❀"
+          aria-label="Priorities, one per line"
+          required
+        ></textarea>
+        <div class="add-actions">
+          <button type="submit">Add to list</button>
+          <button type="button" class="secondary" id="clear-btn">
+            Clear list
+          </button>
+          <div class="history">
+  <button type="button" class="secondary icon-btn" id="undo-btn" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
+  <button type="button" class="secondary icon-btn" id="redo-btn" title="Redo (Ctrl+Shift+Z)" aria-label="Redo">↷</button>
+</div>
+        </div>
+      </form>
+
+      <ol class="list" id="list" aria-label="Priority list"></ol>
+
+      <p class="empty" id="empty" hidden>
+        Nothing here yet. Add your first priority above.
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
