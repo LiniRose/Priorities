@@ -25,15 +25,15 @@ body {
 .board {
   width: 100%;
   max-width: 560px;
+  min-width: 0;
 }
  
 .board-head h1 {
   margin: 0 0 4px;
   font-size: 2rem;
   letter-spacing: -0.02em;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4em;
+  white-space: nowrap; 
+  overflow: hidden;  
 }
 
 .deco {
