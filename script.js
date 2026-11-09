@@ -10,7 +10,6 @@ const defaults = [];
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 // Storage
-
 function load() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -95,8 +94,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Building items
-
+// Building item cards
 function createItem(text) {
   const li = document.createElement("li");
   li.className = "item";
@@ -122,7 +120,6 @@ function createItem(text) {
 }
 
 // Smooth movement
-
 function snapshot() {
   const tops = new Map();
   list.querySelectorAll(".item:not(.placeholder)").forEach((el) => {
@@ -148,7 +145,6 @@ function animateFrom(before) {
 }
 
 //Dragging with pointer events
-
 let drag = null;
 
 list.addEventListener("pointerdown", (e) => {
@@ -295,7 +291,6 @@ function onUp(e) {
 }
 
 // Keyboard
-
 list.addEventListener("keydown", (e) => {
   const item = e.target.closest(".item");
   if (!item || e.target !== item || !e.altKey) return;
@@ -316,7 +311,6 @@ list.addEventListener("keydown", (e) => {
 });
 
 // Add, remove and clear
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const lines = input.value
@@ -354,7 +348,6 @@ list.addEventListener("click", (e) => {
 });
 
 // Start
-
 load().forEach((text) => list.appendChild(createItem(text)));
 current = readList();
 persist(current);
